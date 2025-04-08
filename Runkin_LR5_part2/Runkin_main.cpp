@@ -1,3 +1,4 @@
+// #include "Runkin_main.h"
 #include <functional>
 #include <iostream>
 #include <map>
@@ -37,7 +38,7 @@ void EnterNumber(int &varLink, const string &label) {
 // Функция для ввода числа
 // глобальные переменные - стороны прямоугольника
 
-void calculateRemainder() {
+int calculateRemainder1() {
   if (P > 0) {
     int remainder = Q % P;
     cout << "Remainder of Q divided by P: " << remainder << endl;
@@ -58,7 +59,7 @@ void inputQ() {
   EnterNumber(Q, "Enter natural number Q: ");
   // ИЗМЕНЕНИЯ - Ветка branch_fun_2
 }
-void calculateQuotient() {
+int calculateQuotient1() {
   if (P > 0) {
     int quotient = Q / P;
     cout << "Integer part of Q divided by P: " << quotient << endl;
@@ -76,8 +77,8 @@ int main() {
   map<int, MenuItem> menu = {
       {1, {"Enter integer Q", inputP}},
       {2, {"Enter natural number P (less than Q)", inputQ}},
-      {3, {"Calculate remainder of Q divided by P", calculateRemainder}},
-      {4, {"Calculate integer part of Q divided by P", calculateQuotient}},
+      {3, {"Calculate remainder of Q divided by P", calculateRemainder1}},
+      {4, {"Calculate integer part of Q divided by P", calculateQuotient1}},
   };
   int choice = 0;
   //
